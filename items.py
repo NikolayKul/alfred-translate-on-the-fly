@@ -8,7 +8,8 @@ class Item(object):
         self.icon = icon
 
     def __str__(self):
-        return '(Title: {}, Subtitle: {}, Icon: {})'.format(self.title, self.subtitle, self.icon)
+        return '(Title: {}, Subtitle: {}, Icon: {})' \
+            .format(self.title, self.subtitle, self.icon)
 
 
 class ItemFactory(object):
@@ -26,6 +27,7 @@ class ItemFactory(object):
     def add_item(self, title, subtitle):
         it = Item(title, subtitle, ItemFactory.default_icon)
         self.items.append(it)
+
 
 if __name__ == '__main__':
     f = ItemFactory()
