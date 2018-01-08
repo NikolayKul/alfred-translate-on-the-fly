@@ -2,7 +2,7 @@
 class Item(object):
     """Class that represents an Alfred's row item"""
 
-    def __init__(self, title, subtitle, icon):
+    def __init__(self, title, subtitle, icon='icon.png'):
         self.title = title
         self.subtitle = subtitle
         self.icon = icon
@@ -15,8 +15,6 @@ class Item(object):
 class ItemFactory(object):
     """Factory to store `Items`"""
 
-    default_icon = "stub"
-
     def __init__(self):
         self.items = []
 
@@ -25,7 +23,7 @@ class ItemFactory(object):
         return ',\n'.join(s)
 
     def add_item(self, title, subtitle):
-        it = Item(title, subtitle, ItemFactory.default_icon)
+        it = Item(title, subtitle)
         self.items.append(it)
 
 
