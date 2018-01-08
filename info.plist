@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.nikul.totf</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>8C5FE0F7-ACD2-46F1-A72C-F4F9FE8F0629</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0EA360F0-7973-48A3-8719-F1F7099E85A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nikolay Kulachenko</string>
+	<key>description</key>
+	<string>Translate on the fly</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Translate on the fly</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>0EA360F0-7973-48A3-8719-F1F7099E85A6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>queuedelaycustom</key>
+				<integer>2</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Translating...</string>
+				<key>script</key>
+				<string>import translate as t
+
+print t.translate("{query}")</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Translate on the fly</string>
+				<key>title</key>
+				<string>Translate</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C5FE0F7-ACD2-46F1-A72C-F4F9FE8F0629</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0EA360F0-7973-48A3-8719-F1F7099E85A6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>8C5FE0F7-ACD2-46F1-A72C-F4F9FE8F0629</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
