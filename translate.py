@@ -1,13 +1,22 @@
 from item_store import ItemStore
 
 def translate(query):
-  """
-  Test translate
-  """
-  return "test"
+    store = ItemStore()
 
-if __name__ == '__main__':
-    f = ItemStore()
+    # just print a `query` for now
     for i in range(0, 10):
-        f.add_item('title_{}'.format(i), 'subtitle_{}'.format(i))
-    print f
+        store.add_item(
+                '{}_{}'.format(query, i),
+                '{}_sub_{}'.format(query, i))
+
+    print store
+
+
+# for debug only
+if __name__ == '__main__':
+    store = ItemStore()
+    for i in range(0, 10):
+        store.add_item(
+                'title_{}'.format(i),
+                'subtitle_{}'.format(i))
+    print store
