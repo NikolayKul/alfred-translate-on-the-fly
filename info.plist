@@ -9,18 +9,7 @@
 	<key>connections</key>
 	<dict>
 		<key>8C5FE0F7-ACD2-46F1-A72C-F4F9FE8F0629</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0EA360F0-7973-48A3-8719-F1F7099E85A6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>Nikolay Kulachenko</string>
@@ -35,23 +24,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>0EA360F0-7973-48A3-8719-F1F7099E85A6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -61,7 +33,7 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>4</integer>
 				<key>keyword</key>
 				<string>t</string>
 				<key>queuedelaycustom</key>
@@ -103,13 +75,6 @@ print t.translate("{query}")</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0EA360F0-7973-48A3-8719-F1F7099E85A6</key>
-		<dict>
-			<key>xpos</key>
-			<integer>290</integer>
-			<key>ypos</key>
-			<integer>50</integer>
-		</dict>
 		<key>8C5FE0F7-ACD2-46F1-A72C-F4F9FE8F0629</key>
 		<dict>
 			<key>xpos</key>
