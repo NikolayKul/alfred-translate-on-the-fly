@@ -4,7 +4,11 @@ TL;DR:
 
 ![tl;dr](tldr.gif)
 
-[Download](https://github.com/NikolayKul/alfred-translate-on-the-fly/raw/master/Translate_on_the_fly.alfredworkflow)
+## How to install
+
+  - [Download](https://github.com/NikolayKul/alfred-translate-on-the-fly/raw/master/Translate_on_the_fly.alfredworkflow)
+  - Open
+  - Click `Import`
 
 ## TODO
 
