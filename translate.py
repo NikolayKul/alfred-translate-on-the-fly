@@ -5,44 +5,42 @@ import json
 
 
 
-TRANSLATE_API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ecfe2c195e3cabf9d'
-TRANSLATE_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
+API_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
+API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ecfe2c195e3cabf9d'
 
 
 
-def create_url(query):
+def api_create_url(query):
     data = urllib.urlencode({
-        'key' : TRANSLATE_API_KEY,
+        'key' : API_KEY,
         'lang' : 'en-ru'
     })
-    return '{}?{}'.format(TRANSLATE_URL, data)
+    return '{}?{}'.format(API_URL, data)
 
 
 
-def call_api(query):
-    url = create_url(query)
+def api_translate(query):
+    url = api_create_url(query)
     data = urllib.urlencode({
         'text' : query
     })
     request = urllib2.urlopen(url, data)
-    result = json.dumps(request.read(), ensure_ascii=False)
-    return result
+    response = request.read().decode('utf-8')
+    return json.loads(response)
 
 
 
 def translate(query):
+    result = api_translate(query)
     store = ItemStore()
-
-    # just print a `query` for now
-    for i in range(0, 10):
-        store.add_item(
-                '{}_{}'.format(query, i),
-                '{}_sub_{}'.format(query, i))
-
+    for text in result['text']:
+        store.add_item(text, text)
     print store
 
 
 
 # for debug only
 if __name__ == '__main__':
-    print call_api("Hello world!")
+    result = api_translate('hello world')
+    for text in result['text']:
+        print text
