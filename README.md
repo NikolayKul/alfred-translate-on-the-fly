@@ -1,7 +1,7 @@
 # Alfred's workflow to translate words on the fly
 
-## Todo
+## TODO
 
-  - Dynamically define `from` and `to` languages [`en`, `ru`]
+  - Dynamically define `from` and `to` languages [`en`, `ru`] and update icon respectively
   - Suggest autocompletion
   - Autocorrect words
