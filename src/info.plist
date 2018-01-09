@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.nikul.totf</string>
+	<string>com.nikolaykul.totf</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -84,6 +84,6 @@ print t.translate("{query}")</string>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/NikolayKul/alfred-translate-on-the-fly</string>
 </dict>
 </plist>
