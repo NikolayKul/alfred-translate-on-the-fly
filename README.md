@@ -1,6 +1,7 @@
 # Alfred's workflow to translate words on the fly
 
-tldr;
+TL;DR:
+![tl;dr](tldr.gif)
 
 ## TODO
 
