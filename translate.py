@@ -10,21 +10,13 @@ API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ec
 
 
 
-def api_create_url(query):
+def api_translate(query):
     data = urllib.urlencode({
         'key' : API_KEY,
-        'lang' : 'en-ru'
-    })
-    return '{}?{}'.format(API_URL, data)
-
-
-
-def api_translate(query):
-    url = api_create_url(query)
-    data = urllib.urlencode({
+        'lang' : 'en-ru',
         'text' : query
     })
-    request = urllib2.urlopen(url, data)
+    request = urllib2.urlopen(API_URL, data)
     response = request.read().decode('utf-8')
     return json.loads(response)
 
