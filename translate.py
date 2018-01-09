@@ -41,6 +41,11 @@ def translate(query):
 
 # for debug only
 if __name__ == '__main__':
-    result = api_translate('hello world')
-    for text in result['text']:
-        print text
+
+    import sys
+    query = 'hello world'
+    if len(sys.argv) > 1:
+        query = sys.argv[1]
+
+    result = api_translate(query)
+    print 'result = ' + json.dumps(result, ensure_ascii=False)
