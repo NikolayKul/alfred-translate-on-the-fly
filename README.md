@@ -4,6 +4,10 @@ TL;DR:
 
 ![tl;dr](tldr.gif)
 
+## Version
+
+Current version is **0.2.0**
+
 ## How to install
 
   - [Download](https://github.com/NikolayKul/alfred-translate-on-the-fly/raw/master/Translate_on_the_fly.alfredworkflow)
