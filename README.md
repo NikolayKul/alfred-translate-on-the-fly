@@ -4,6 +4,8 @@ TL;DR:
 
 ![tl;dr](tldr.gif)
 
+[Download](https://github.com/NikolayKul/alfred-translate-on-the-fly/raw/master/Translate_on_the_fly.alfredworkflow)
+
 ## TODO
 
   - Generate a meaningful item's `Subtitle`
