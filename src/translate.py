@@ -10,10 +10,24 @@ API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ec
 
 
 
+def is_russian(query):
+    try:
+        query.decode('ascii')
+        return False
+    except UnicodeDecodeError:
+        return True
+
+
+
+def get_translate_lang(query):
+    return 'ru-en' if is_russian(query) else 'en-ru'
+
+
+
 def api_translate(query):
     data = urllib.urlencode({
         'key' : API_KEY,
-        'lang' : 'en-ru',
+        'lang' : get_translate_lang(query),
         'text' : query
     })
     request = urllib2.urlopen(API_URL, data)
