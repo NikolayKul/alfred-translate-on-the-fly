@@ -14,13 +14,19 @@ def is_russian(query):
     try:
         query.decode('ascii')
         return False
-    except UnicodeDecodeError:
+    except (UnicodeDecodeError, UnicodeEncodeError):
         return True
 
 
 
 def get_translate_lang(query):
     return 'ru-en' if is_russian(query) else 'en-ru'
+
+
+
+def get_text_icon(text):
+    icon_postfix = 'ru' if is_russian(text) else 'en'
+    return 'icons/icon_{}.png'.format(icon_postfix)
 
 
 
@@ -31,8 +37,7 @@ def api_translate(query):
         'text' : query
     })
     request = urllib2.urlopen(API_URL, data)
-    response = request.read().decode('utf-8')
-    return json.loads(response)
+    return json.loads(request.read())
 
 
 
@@ -40,7 +45,10 @@ def translate(query):
     result = api_translate(query)
     store = ItemStore()
     for text in result['text']:
-        store.add_item(text, text)
+        store.add_item(
+                    title = text,
+                    subtitle = '',
+                    icon = get_text_icon(text))
     print store
 
 
@@ -49,9 +57,11 @@ def translate(query):
 if __name__ == '__main__':
 
     import sys
-    query = 'hello world'
     if len(sys.argv) > 1:
         query = sys.argv[1]
+    else:
+        query = 'hello world'
 
     result = api_translate(query)
+    print 'icons = ' + str([get_text_icon(x) for x in result['text']])
     print 'result = ' + json.dumps(result, ensure_ascii=False)
