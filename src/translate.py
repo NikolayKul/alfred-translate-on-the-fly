@@ -57,10 +57,7 @@ def translate(query):
 if __name__ == '__main__':
 
     import sys
-    if len(sys.argv) > 1:
-        query = sys.argv[1]
-    else:
-        query = 'hello world'
+    query = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else 'hello world'
 
     result = api_translate(query)
     print 'icons = ' + str([get_text_icon(x) for x in result['text']])
