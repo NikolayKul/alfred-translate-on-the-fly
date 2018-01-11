@@ -13,7 +13,7 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
 
 ## Version
 
-Current version is **0.2.0**
+Current version is **0.3**
 
 ## How to install
 
@@ -23,8 +23,8 @@ Current version is **0.2.0**
 
 ## TODO
 
-  - Generate a meaningful item's `Subtitle`
-  - Add multiple suggestions
-  - Dynamically define `from` and `to` languages [`en`/`ru`] and update an item's icon respectively
+  - ~~Dynamically define `from` and `to` languages [`en`/`ru`] and update an item's icon respectively~~
   - Suggest autocompletion
+  - Generate a meaningful item's `Subtitle`
   - Autocorrect words
+  - Add multiple suggestions
