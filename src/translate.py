@@ -47,13 +47,22 @@ def api_predict(query):
     return json.loads(request.read())
 
 
+def predict_query(query):
+    prediction = api_predict(query)
+    if prediction['endOfWord']:
+        return query
+    pos = len(query) + prediction['pos']
+    return query[:pos] + prediction['text'][0]
+
+
 def get_text_icon(text):
     icon_postfix = 'ru' if is_russian(text) else 'en'
     return 'icons/icon_{}.png'.format(icon_postfix)
 
 
 def translate(query):
-    result = api_translate(query)
+    prediction = predict_query(query)
+    result = api_translate(prediction)
     store = ItemStore()
     for text in result['text']:
         store.add_item(
@@ -69,10 +78,6 @@ if __name__ == '__main__':
     import sys
     query = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else 'hello world'
 
-    predict = api_predict(query)
-    print json.dumps(predict, ensure_ascii=False)
-
-
-    #result = api_translate(query)
-    #print 'icons = ' + str([get_text_icon(x) for x in result['text']])
-    #print 'result = ' + json.dumps(result, ensure_ascii=False)
+    prediction = predict_query(query)
+    result = api_translate(prediction)
+    print 'result = ' + json.dumps(result, ensure_ascii=False)
