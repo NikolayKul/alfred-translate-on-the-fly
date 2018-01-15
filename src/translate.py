@@ -5,8 +5,8 @@ import json
 
 
 
-API_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
-API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ecfe2c195e3cabf9d'
+TRANSLATE_API_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
+TRANSLATE_API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ecfe2c195e3cabf9d'
 
 
 
@@ -32,11 +32,11 @@ def get_text_icon(text):
 
 def api_translate(query):
     data = urllib.urlencode({
-        'key' : API_KEY,
+        'key' : TRANSLATE_API_KEY,
         'lang' : get_translate_lang(query),
         'text' : query
     })
-    request = urllib2.urlopen(API_URL, data)
+    request = urllib2.urlopen(TRANSLATE_API_URL, data)
     return json.loads(request.read())
 
 
