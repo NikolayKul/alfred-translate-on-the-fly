@@ -9,32 +9,16 @@ def get_text_icon(text):
     return 'icons/icon_{}.png'.format(icon_postfix)
 
 
-def print_debug_info(name, value):
-    print '{} = {}, isUnicode = {}'.format(name, value, isinstance(value, unicode))
-
-
 def translate(query):
-    print_debug_info('query', query)
-
     prediction = predict_text(query)
-    print_debug_info('prediction', prediction)
-
     result = translate_text(prediction)
-    print 'translate = ' + str(result)
-
     store = ItemStore()
     for text in result['text']:
-        sub = '' if query == prediction else prediction
-        sub = sub.decode('utf-8')
-
-        print 'sub = ' + sub
-        print 'sub is Unicode = ' + str(isinstance(sub, unicode))
-        print 'text = ' + text
-        print 'text is Unicode = ' + str(isinstance(text, unicode))
-
+        subtitle = '' if query == prediction else prediction
+        subtitle = subtitle.decode('utf-8')
         store.add_item(
                     title = text,
-                    subtitle = sub,
+                    subtitle = subtitle,
                     icon = get_text_icon(text))
     return store
 
