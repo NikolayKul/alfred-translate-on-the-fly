@@ -1,14 +1,7 @@
 from item_store import ItemStore
+from lang import is_russian
 from predict import predict_text
 from translate import translate_text
-
-
-def is_russian(text):
-    try:
-        text.decode('ascii')
-        return False
-    except (UnicodeDecodeError, UnicodeEncodeError):
-        return True
 
 
 def get_text_icon(text):
