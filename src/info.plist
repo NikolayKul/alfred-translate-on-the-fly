@@ -48,7 +48,6 @@
 				<string>Translating...</string>
 				<key>script</key>
 				<string>import main
-
 print main.translate("{query}")</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
