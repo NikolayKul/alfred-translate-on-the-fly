@@ -47,9 +47,9 @@
 				<key>runningsubtext</key>
 				<string>Translating...</string>
 				<key>script</key>
-				<string>import translate as t
+				<string>import main
 
-print t.translate("{query}")</string>
+print main.translate("{query}")</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
