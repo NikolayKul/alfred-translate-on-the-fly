@@ -20,6 +20,9 @@ def api_predict(query):
 
 def predict_text(text):
     prediction = api_predict(text)
+    if prediction['endOfWord']:
+        return text
+
     decoded_text = text.decode('utf-8')
     pos = len(decoded_text) + prediction['pos']
     return decoded_text[:pos] + prediction['text'][0]
