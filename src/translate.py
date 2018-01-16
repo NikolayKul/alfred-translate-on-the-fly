@@ -1,4 +1,5 @@
 from item_store import ItemStore
+from predict import predict_text
 import urllib
 import urllib2
 import json
@@ -6,9 +7,6 @@ import json
 
 TRANSLATE_API_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
 TRANSLATE_API_KEY = 'trnsl.1.1.20180108T204339Z.bd63133ee1faca13.5e5d65d48b26e37678d2c84ecfe2c195e3cabf9d'
-
-PREDICT_API_URL = 'https://predictor.yandex.net/api/v1/predict.json/complete'
-PREDICT_API_KEY = 'pdct.1.1.20180115T142706Z.a5c4f724bf141b22.3d432baa9167feaac0c9115667d4a95092b6af82'
 
 
 def is_russian(query):
@@ -33,43 +31,26 @@ def api_translate(query):
     return json.loads(request.read())
 
 
-def get_query_lang(query):
-    return 'ru' if is_russian(query) else 'en'
-
-
-def api_predict(query):
-    data = urllib.urlencode({
-        'key': PREDICT_API_KEY,
-        'lang': get_query_lang(query),
-        'q': query
-    })
-    request = urllib2.urlopen(PREDICT_API_URL, data)
-    return json.loads(request.read())
-
-
-def predict_query(query):
-    prediction = api_predict(query)
-    if prediction['endOfWord']:
-        return query
-    pos = len(query) + prediction['pos']
-    return query[:pos] + prediction['text'][0]
-
-
 def get_text_icon(text):
     icon_postfix = 'ru' if is_russian(text) else 'en'
     return 'icons/icon_{}.png'.format(icon_postfix)
 
 
 def translate(query):
-    prediction = predict_query(query)
+    prediction = predict_text(query).encode('utf-8')
+    print 'prediction = ' + prediction
     result = api_translate(prediction)
+    print 'result_with_pred = ' + str(result)
     store = ItemStore()
     for text in result['text']:
+        sub = '' if query == prediction else prediction
+        print 'sub = ' + sub.decode('utf-8')
+        print 'text = ' + text.decode('utf-8')
         store.add_item(
-                    title = text,
-                    subtitle = '',
+                    title = text.decode('utf-8'),
+                    subtitle = sub.decode('utf-8'),
                     icon = get_text_icon(text))
-    print store
+    return store
 
 
 # for debug only
@@ -78,6 +59,6 @@ if __name__ == '__main__':
     import sys
     query = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else 'hello world'
 
-    prediction = predict_query(query)
-    result = api_translate(prediction)
-    print 'result = ' + json.dumps(result, ensure_ascii=False)
+    query.decode('utf-8')
+
+    print translate(query)
