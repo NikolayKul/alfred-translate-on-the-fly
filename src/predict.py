@@ -23,6 +23,9 @@ def predict_text(text):
     if prediction['endOfWord']:
         return text
 
-    decoded_text = text.decode('utf-8')
-    pos = len(decoded_text) + prediction['pos']
-    return decoded_text[:pos] + prediction['text'][0]
+    # compare strings in `unicode`
+    # concat the source text and the first prediction
+    unicode_text = text.decode('utf-8')
+    pos = len(unicode_text) + prediction['pos']
+    result = unicode_text[:pos] + prediction['text'][0]
+    return result.encode('utf-8')
