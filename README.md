@@ -23,9 +23,9 @@ Current version is **0.5**
 
 ## TODO
 
-  - ~~Dynamically define `from` and `to` languages and update an item's icon respectively~~
-  - ~Suggest autocompletion~
-  - ~Generate a meaningful item's `Subtitle`~
-  - Autocorrect words
-  - Add multiple suggestions
-  - Copy the translation on `return` click
+  - [x] Dynamically define `from` and `to` languages and update an item's icon respectively
+  - [x] Suggest autocompletion
+  - [x] Generate a meaningful item's `Subtitle`
+  - [ ] Autocorrect words
+  - [ ] Add multiple suggestions
+  - [ ] Copy the translation on `return` click
