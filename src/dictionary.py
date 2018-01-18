@@ -21,8 +21,8 @@ def lookup_text(text):
     first_article = lookup['def'][0]
     first_translations = first_article['tr'][0]
 
-    result = [ {'text' : first_translations['text']} ]
+    result = [ first_translations['text'] ]
     for syn in first_translations['syn']:
-        result.append( { 'text' : syn['text'] } )
+        result.append( syn['text'] )
 
     return result

@@ -2,6 +2,7 @@ from item_store import ItemStore
 from lang import is_russian
 from predict import predict_text
 from translate import translate_text
+from dictionary import lookup_text
 
 
 def get_text_icon(text):
@@ -11,9 +12,9 @@ def get_text_icon(text):
 
 def translate(query):
     prediction = predict_text(query)
-    result = translate_text(prediction)
+    result = lookup_text(prediction)
     store = ItemStore()
-    for text in result['text']:
+    for text in result:
         subtitle = '' if query == prediction else prediction
         subtitle = subtitle.decode('utf-8')
         store.add_item(
