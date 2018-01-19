@@ -18,6 +18,9 @@ def api_lookup_text(text):
 
 def lookup_text(text):
     lookup = api_lookup_text(text)
+    if not lookup['def']:
+        return []
+
     first_article = lookup['def'][0]
     first_translations = first_article['tr'][0]
 
