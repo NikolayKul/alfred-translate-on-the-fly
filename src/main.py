@@ -10,9 +10,15 @@ def get_text_icon(text):
     return 'icons/icon_{}.png'.format(icon_postfix)
 
 
+def get_translation_result(text):
+    translation = translate_text(text)
+    lookup = lookup_text(text)
+    return translation + lookup
+
+
 def translate(query):
     prediction = predict_text(query)
-    result = lookup_text(prediction)
+    result = get_translation_result(prediction)
     store = ItemStore()
     for text in result:
         subtitle = '' if query == prediction else prediction
