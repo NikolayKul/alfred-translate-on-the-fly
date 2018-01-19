@@ -3,6 +3,7 @@ from lang import is_russian
 from predict import predict_text
 from translate import translate_text
 from dictionary import lookup_text
+from multiprocessing import Pool
 
 
 def get_text_icon(text):
@@ -11,9 +12,19 @@ def get_text_icon(text):
 
 
 def get_translation_result(text):
-    translation = translate_text(text)
-    lookup = lookup_text(text)
-    return translation + lookup
+    pool = Pool(processes=2)
+
+    arg = [ text ]
+    translation_request = pool.map_async(translate_text, arg)
+    lookup_request = pool.map_async(lookup_text, arg)
+
+    translation_result = translation_request.get()[0]
+    lookup_result = lookup_request.get()[0]
+
+    pool.close()
+    pool.join()
+
+    return lookup_result if lookup_result else translation_result
 
 
 def translate(query):
