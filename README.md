@@ -13,7 +13,7 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
 
 ## Version
 
-Current version is **0.5**
+Current version is **0.6**
 
 ## How to install
 
