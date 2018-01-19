@@ -27,5 +27,5 @@ Current version is **0.5**
   - [x] Suggest autocompletion
   - [x] Generate a meaningful item's `Subtitle`
   - [ ] Autocorrect words
-  - [ ] Add multiple suggestions
+  - [x] Add multiple suggestions (when possible)
   - [ ] Copy the translation on `return` click
