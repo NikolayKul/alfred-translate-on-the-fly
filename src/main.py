@@ -30,10 +30,12 @@ def get_translation_result(text):
 def translate(query):
     prediction = predict_text(query)
     result = get_translation_result(prediction)
+
+    subtitle = '' if query == prediction else prediction
+    subtitle = subtitle.decode('utf-8')
+
     store = ItemStore()
     for text in result:
-        subtitle = '' if query == prediction else prediction
-        subtitle = subtitle.decode('utf-8')
         store.add_item(
                     title = text,
                     subtitle = subtitle,
