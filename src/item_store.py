@@ -6,7 +6,6 @@ class Item(object):
     Alfred's row item
     Based on https://www.alfredforum.com/topic/5-generating-feedback-in-workflows
     """
-
     def __init__(self, title, subtitle, icon):
         self.root = et.Element('item', uid='', arg='', valid='yes', autocomplete='')
         et_title = et.SubElement(self.root, 'title')
@@ -15,9 +14,6 @@ class Item(object):
         et_subtitle.text = subtitle
         et_icon = et.SubElement(self.root, 'icon')
         et_icon.text = icon
-
-    def __str__(self):
-        return et.tostring(self.root)
 
 
 class ItemStore(object):
