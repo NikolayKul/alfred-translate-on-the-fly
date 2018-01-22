@@ -29,17 +29,18 @@ def get_translation_result(text):
 
 def translate(query):
     prediction = predict_text(query)
-    result = get_translation_result(prediction)
+    translations = get_translation_result(prediction)
 
     subtitle = '' if query == prediction else prediction
     subtitle = subtitle.decode('utf-8')
 
+    # title, subtitle, icon
+    item_tuples = [ (x, subtitle, get_text_icon(x)) for x in translations ]
+
     store = ItemStore()
-    for text in result:
-        store.add_item(
-                    title = text,
-                    subtitle = subtitle,
-                    icon = get_text_icon(text))
+    for item in item_tuples:
+        store.add_item(*item)
+
     return store
 
 
