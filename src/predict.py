@@ -8,18 +8,18 @@ PREDICT_API_URL = 'https://predictor.yandex.net/api/v1/predict.json/complete'
 PREDICT_API_KEY = 'pdct.1.1.20180115T142706Z.a5c4f724bf141b22.3d432baa9167feaac0c9115667d4a95092b6af82'
 
 
-def api_predict(query):
+def _api_predict_text(text):
     data = urllib.urlencode({
         'key': PREDICT_API_KEY,
-        'lang': get_lang(query),
-        'q': query
+        'lang': get_lang(text),
+        'q': text
     })
     request = urllib2.urlopen(PREDICT_API_URL, data)
     return json.loads(request.read())
 
 
 def predict_text(text):
-    prediction = api_predict(text)
+    prediction = _api_predict_text(text)
     if prediction['endOfWord']:
         return text
 
