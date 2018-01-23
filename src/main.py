@@ -28,6 +28,7 @@ def get_translation_result(text):
 
 
 def translate(query):
+    query = query.strip()
     prediction = predict_text(query)
     translations = get_translation_result(prediction)
 
