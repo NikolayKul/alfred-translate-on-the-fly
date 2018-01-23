@@ -20,8 +20,7 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
   - Select any text and press the Hotkey&#42;&#42; to translate it without any extra moves
   - Copy the result into a clipboard by `return` click
 
-&#42; There's also an extra Russian letter `е` which is useful when you need to translate from Russian (no need to switch languages in Alfred)
-
+&#42; There's also an extra Russian letter `е` which is useful when you need to translate from Russian (no need to switch languages in Alfred)  
 &#42;&#42; The default Hotkey is `option + t`. But you can always change that in [the workflow's settings](https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/)
 
 ## Version
