@@ -11,9 +11,20 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
 
 &#42; I didn't like [the most popular solution](https://github.com/thomashempel/AlfredGoogleTranslateWorkflow) because of its verbosity (driven by a flexibility). Though it's may be what you're looking for.
 
+## Features
+
+  - Translate with only one letter - `t`
+  - Prediction / Autocorrection
+  - Multiple translations (when possible)
+  - No need to specify the direction of translation
+  - Select any text and press the Hotkey&#42; to translate it without any extra moves
+  - Copy the result into a clipboard by `return` click
+
+&#42; The default Hotkey is `option + t`. But you can always change that in [the workflow's settings](https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/)
+
 ## Version
 
-Current version is **0.9**
+Current version is **1.0**
 
 ## How to install
 
@@ -27,7 +38,8 @@ Current version is **0.9**
   - [x] Suggest autocompletion
   - [x] Generate a meaningful item's `Subtitle`
   - [x] Autocorrect words
-  - [x] Add multiple suggestions (when possible)
+  - [x] Add multiple translations
   - [x] Copy the translation on `return` click
-  - [ ] Add a Hotkey feature
-  - [ ] Add an empty item for `no result`
+  - [x] Add a Hotkey
+  - [ ] Add an extra Russian `е` letter to launch the translation
+  - [ ] Redirect to [Google Translate](https://translate.google.com/) by `cmd + return`
