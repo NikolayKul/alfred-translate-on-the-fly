@@ -35,8 +35,13 @@ def translate(query):
     subtitle = '' if query == prediction else prediction
     subtitle = subtitle.decode('utf-8')
 
-    # title, subtitle, icon
+    # (title, subtitle, icon)
     item_tuples = [ (x, subtitle, get_text_icon(x)) for x in translations ]
+
+    # move 1st item to the end because of Alfred
+    if item_tuples:
+        item_tuples.append(item_tuples[0])
+        del item_tuples[0]
 
     store = ItemStore()
     for item in item_tuples:
