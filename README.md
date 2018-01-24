@@ -17,12 +17,12 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
   - Prediction / Autocorrection
   - Multiple translations (when possible)
   - No need to specify the direction of translation
-  - Select any text and press the Hotkey&#42;&#42; to translate it without any extra moves
+  - Select any text and press a hotkey&#42;&#42; to translate it without any extra moves
   - Copy the result into a clipboard by `return` click
   - Redirect to [Google Translate](https://translate.google.com/) by `cmd + return`
 
 &#42; There's also an extra Russian letter `е` which is useful when you need to translate from Russian (no need to switch languages in Alfred)  
-&#42;&#42; The default Hotkey is `option + t`. But you can always change that in [the workflow's settings](https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/)
+&#42;&#42; The default hotkey is `option + t`. But you can always change that in [the workflow's settings](https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/)
 
 ## Version
 
@@ -42,6 +42,6 @@ Current version is **1.2**
   - [x] Autocorrect words
   - [x] Add multiple translations
   - [x] Copy the translation on `return` click
-  - [x] Add a Hotkey
-  - [x] Add an extra Russian `е` letter to launch the translation
-  - [x] Translate in browser by a Hotkey
+  - [x] Add a hotkey
+  - [x] Add an extra Russian letter `е` to launch the translation
+  - [x] Translate in browser by a hotkey
