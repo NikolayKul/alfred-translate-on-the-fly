@@ -4,6 +4,10 @@ TL;DR:
 
 ![tl;dr](tldr.gif)
 
+Translate by a hotkey:
+
+![hotkey](hotkey.gif)
+
 ## Philosophy
 
 I bet you know that feeling when you need to translate a word (or a phrase) and have to switch to a browser, translate, copy, return back and paste the result. Tedious, isn't it?  
