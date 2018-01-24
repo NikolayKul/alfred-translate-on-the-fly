@@ -15,7 +15,7 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
 
   - Translate with only one letter - `t`&#42;
   - Prediction / Autocorrection
-  - Multiple translations (when possible)
+  - Multiple translations (in order of importance)
   - No need to specify the direction of translation
   - Select any text and press a hotkey&#42;&#42; to translate it without any extra moves
   - Copy the result into a clipboard by `return` click
@@ -26,7 +26,7 @@ Here's where [Alfred](https://www.alfredapp.com) comes in. I love this tool and 
 
 ## Version
 
-Current version is **1.2**
+Current version is **1.3**
 
 ## How to install
 
